@@ -123,7 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PPM Image Loader.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ppm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pixel.hpp" />
+    <ClInclude Include="ppm.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\PPM.ppm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
