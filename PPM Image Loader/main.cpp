@@ -20,5 +20,7 @@ int main() {
 	test1();
 	test2();
 
+	std::cout << "size of ppm:" << sizeof(PPM) << std::endl;
+
 	return 0;
 }

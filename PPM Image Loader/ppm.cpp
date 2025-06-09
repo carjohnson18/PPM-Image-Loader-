@@ -75,10 +75,9 @@ void PPM::savePPM(std::string outFileName) {
 	myFile << mWidth << " " << mHeight << "\n";
 	myFile << mMaxRange<<"\n";
 	for (int i = 0; i < mPixels.size(); i++) {
-		myFile << mPixels[i] << '\n';
+		myFile << static_cast<int>(mPixels[i]) << '\n';
 	}
 	myFile.close();
-
 }
 
 void PPM::lighten() {

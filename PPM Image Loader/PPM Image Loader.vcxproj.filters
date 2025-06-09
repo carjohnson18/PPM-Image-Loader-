@@ -32,5 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Downloads\PPM.ppm" />
+    <None Include="darken.ppm" />
   </ItemGroup>
 </Project>

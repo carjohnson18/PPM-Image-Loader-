@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\Downloads\PPM.ppm" />
+    <None Include="darken.ppm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

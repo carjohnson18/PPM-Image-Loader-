@@ -1,17 +1,14 @@
 #pragma once
 #include <string>
+#include <cstdint>
 #include "pixel.hpp"
 #include <vector>
 //header - ppm.hpp
-
 //header files serve as interfaces
-
-
 class PPM {
 	public: 
 		//constructor
 		PPM(std::string filename);
-
 		//destructor
 		~PPM();
 
@@ -20,13 +17,9 @@ class PPM {
 		void darken();
 
 	private:
-		//try maybe using
-		// a pixel * mPixelArray;
-		// a little less memory then array
-		std::vector<int> mPixels;
-		int mWidth; 
-		int mHeight;
-		int mMaxRange; 
-
-
+		std::vector<uint8_t> mPixels;
+		int mMaxRange;
+		short mWidth;
+		short mHeight;
+		
 };
