@@ -5,6 +5,7 @@
 #include<string>
 #include <sstream>
 #include "ppm.hpp"
+#include <algorithm>
 
 PPM::PPM(std::string filename) {
 	std::cout << "PPM::PPM()\n";
@@ -32,12 +33,12 @@ PPM::PPM(std::string filename) {
 			std::string chunck_of_data;
 			while (stream >> chunck_of_data) {
 				if (chunck_of_data[0] == '#') {
-					std::cout << line << std::endl;
+//					std::cout << line << std::endl;
 					break; 
 				}
 				else if (false == foundp3) {
 					if (chunck_of_data == "P3") {
-						std::cout << "found p3: " << std::endl;
+//						std::cout << "found p3: " << std::endl;
 					}
 					foundp3 = true;
 				}
@@ -57,6 +58,7 @@ PPM::PPM(std::string filename) {
 				}
 			}
 		}
+		inputFile.close();
 	}
 }
 
@@ -66,11 +68,30 @@ PPM::~PPM(){
 
 void PPM::savePPM(std::string outFileName) {
 
+	std::ofstream myFile;
+	myFile.open(outFileName);
+	myFile << "P3\n";
+	myFile << "# saves by us\n";
+	myFile << mWidth << " " << mHeight << "\n";
+	myFile << mMaxRange<<"\n";
+	for (int i = 0; i < mPixels.size(); i++) {
+		myFile << mPixels[i] << '\n';
+	}
+	myFile.close();
+
 }
 
 void PPM::lighten() {
+	for (int i = 0; i < mPixels.size(); i++) {
+		int data = mPixels[i] * 4;
+		mPixels[i] = std::clamp(data, 0, mMaxRange);
+	}
 
 }
 void PPM::darken() {
+	for (int i = 0; i < mPixels.size(); i++) {
+		int data = mPixels[i] / 4;
+		mPixels[i] = std::clamp(data, 0, mMaxRange);
+	}
 
 }
