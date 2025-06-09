@@ -30,9 +30,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\Downloads\PPM.ppm">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
 </Project>

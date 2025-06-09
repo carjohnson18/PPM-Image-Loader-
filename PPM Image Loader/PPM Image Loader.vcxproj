@@ -130,9 +130,6 @@
     <ClInclude Include="pixel.hpp" />
     <ClInclude Include="ppm.hpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\Downloads\PPM.ppm" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -16,14 +16,14 @@ class PPM {
 		~PPM();
 
 		void savePPM(std::string outFileName);
-
 		void lighten();
 		void darken();
+
 	private:
 		//try maybe using
 		// a pixel * mPixelArray;
 		// a little less memory then array
-		std::vector<pixel> mPixels;
+		std::vector<int> mPixels;
 		int mWidth; 
 		int mHeight;
 		int mMaxRange; 
